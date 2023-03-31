@@ -47,12 +47,15 @@ body {
     @apply text-gray-600; 
     @apply dark:text-white;
   }
+  main {
+    @apply p-5
+  }
   h3 {
-    @apply text-2xl; 
+    @apply text-base; 
     @apply leading-9;
     @apply text-gray-600; 
-    @apply dark:text-white;
-    @apply pb-3;
+    @apply dark:text-gray-300;
+    @apply pb-0;
   }
   main ul {
     @apply text-gray-600;

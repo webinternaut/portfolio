@@ -9,7 +9,7 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <div className="max-w-screen-lg m-auto px-8">
+      <div className="max-w-screen-xl m-auto px-9">
         <Header></Header>
         <main>{children}</main>
         <Footer></Footer>

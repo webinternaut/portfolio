@@ -23,12 +23,12 @@ const Header = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="w-full bg-black-500 border-b-2 border-black:500 mb-20">
+      <nav className="w-full bg-black-500 border-b-2 border-black:500 mb-8">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex ">
           <div>
-          <div className="flex items-center justify-between py-3 md:py-20 md:block">
+          <div className="flex items-center justify-between py-3 md:py-20 md:block">  
               <a href="#">
-              <h2 className="text-4xl font-bold font-sans hover:text-black text-gray-500 dark:text-white hover:animate-pulse">Paul Eschli</h2>
+              <h2 className="text-4xl font-semibold font-sans hover:text-black text-gray-500 dark:text-white hover:animate-pulse">Paul Eschli</h2>
                 
               </a>
               <div className="md:hidden">
@@ -76,28 +76,21 @@ const Header = () => {
                         }`}
                     >
               <ul className="md:flex md:space-x-6 md:space-y-0">
-              <li className="text-gray-500 dark:text-white text-l font-semibold ">
+              <li className="text-gray-500 dark:text-white text-l ">
                 <Link href="/" passHref legacyBehavior>
                   <a className={router.pathname == "/" ? "active" : ""}>
                     Projects
                   </a>
                 </Link>
                 </li>
-                <li className="text-gray-500 dark:text-white text-l font-semibold">
+                <li className="text-gray-500 dark:text-white text-l">
                 <Link href="/about" passHref legacyBehavior>
                   <a className={router.pathname == "/about" ? "active" : ""}>
                     About
                   </a>
                 </Link>
                 </li>
-                <li className="text-gray-500 dark:text-white text-l font-semibold">
-                <Link href="/resume" passHref legacyBehavior>
-                  <a className={router.pathname == "/resume" ? "active" : ""}>
-                    Resume
-                  </a>
-                </Link>
-                </li>
-                <li className="text-gray-500 dark:text-white text-l font-semibold">
+                <li className="text-gray-500 dark:text-white text-l">
                 <Link href="/contact" passHref legacyBehavior>
                   <a className={router.pathname == "/contact" ? "active" : ""}>
                     Contact
