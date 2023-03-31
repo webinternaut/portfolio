@@ -9,6 +9,7 @@ export default function Projects() {
       <div className='border-b-2 border-gray-200 pb-10 mb-10'>
         <h1>Paul Eschli (peschli)</h1>
           <p>
+          <img src="https://mdbootstrap.com//img/Photos/Square/1.jpg" className="h-40 max-w-full rounded-full float-right" alt="" />
           Passionate about design innovation and user experience, I have over 20 years of experience bringing design to cutting-edge technologies. My unique skill set has set new standards in various industries, and as a team player, I bring creative solutions to impact not just the end product, but also internal processes. My expertise in design research, product innovation, AI/ML design, prototyping, user testing, front-end development and digital marketing, as well as my understanding of technology and its capabilities, ensures successful adoption and usability for users.
           </p>
       </div>

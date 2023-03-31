@@ -24,9 +24,17 @@ body {
   margin: 0;
 
 }
-.active {border-bottom: 2px solid #ccc}
+
 
 @layer base {
+
+  .active {
+    @apply border-b-2;
+    @apply border-gray-200;
+    @apply pb-2;
+  
+    }
+
   p {
     @apply text-gray-600;
     @apply dark:text-gray-300;
