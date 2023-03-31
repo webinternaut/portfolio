@@ -1,0 +1,72 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+}
+
+#__next {
+  height: 100%;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+
+
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+}
+.active {border-bottom: 2px solid #ccc}
+
+@layer base {
+  p {
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
+    @apply font-light;
+    @apply leading-8;
+    @apply py-4;
+  }
+  h1 {
+    @apply text-2xl;
+    @apply leading-9;
+    @apply text-gray-600;
+    @apply dark:text-white;
+    @apply pb-3;
+  }
+  h2 {
+    @apply text-xl; 
+    @apply leading-9; 
+    @apply text-gray-600; 
+    @apply dark:text-white;
+  }
+  h3 {
+    @apply text-2xl; 
+    @apply leading-9;
+    @apply text-gray-600; 
+    @apply dark:text-white;
+    @apply pb-3;
+  }
+  main ul {
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
+    @apply font-light;
+    @apply leading-8;
+    @apply py-4;
+    @apply pl-5;
+  }
+  main ul li {
+    list-style-type: disc;
+  }
+  /* ... */
+}
+
+
+
