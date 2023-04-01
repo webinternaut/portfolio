@@ -46,6 +46,9 @@ module.exports = {
       extend: {
         animation: {
           'spin-slow': 'spin 3s linear infinite',
+        },
+        boxShadow: {
+          '3xl': '0 25px 20px -15px rgba(0, 0, 0, 0.4)',
         }
       }
   },

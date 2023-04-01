@@ -13,7 +13,7 @@ export default function Home(props: HomeProps) {
   return (
     <>
     <GoogleAnalytics />
-      <div className="grid gap-4 md:grid-cols-3 sm:grid-cols-2">
+      <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
