@@ -1,62 +1,72 @@
-import { useState } from 'react';
-
-type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
+import React, { useState, FormEvent } from "react";
+import { Input, Textarea } from "@material-tailwind/react";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const response = await fetch('https://formsubmit.co/ajax/webinternaut@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await response.json();
-
-    console.log(data);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+  
+    setIsLoading(true);
+  
+    try {
+      // Send the form data to the server-side route
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+  
+      if (response.ok) {
+        setIsSent(true);
+      } else {
+        console.error(response.statusText);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  
+    setIsLoading(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" name="name" value={formData.name} onChange={handleChange} className='border-2 border-gray-500' />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="email" name="email" value={formData.email} onChange={handleChange} className='border-2 border-gray-500'/>
-      </label>
-      <br />
-      <label>
-        Message:
-        <textarea name="message" value={formData.message} onChange={handleChange} className='border-2 border-gray-500'/>
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="flex justify-center ">
+      {isSent ? (
+        <p>Thank you for your message!</p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <div className="max-w-lg gap-4 ">
+              <div className="w-full px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                  Name
+                </label>
+                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="name" placeholder="Jane" value={name} onChange={(e) => setName(e.target.value)} required />
+              </div>
+              <div className="w-full  px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                  Email
+                </label>
+                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="name" placeholder="myemail@domain.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              </div>
+              <div className="w-full  px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                  Message
+                </label>
+                <Textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="name" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
+              </div>
+              <button type="submit" className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800" disabled={isLoading}>
+              {isLoading ? 'Sending...' : 'Send'}
+           </button>
+           </div>
+        </form>
+      )}
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 export interface Project {
   id?: number | undefined;
   title?: string | undefined;
+  subtitle?: string | undefined;
   status?: string | undefined;
   type?: string | undefined;
   year?: string | undefined;

@@ -60,11 +60,23 @@ body {
   }
   h3 {
     @apply text-base; 
-    @apply leading-9;
+    @apply leading-normal;
     @apply text-gray-600; 
     @apply dark:text-gray-300;
-    @apply pb-0;
+    @apply p-0;
+    @apply m-0;
   }
+
+  h4 {
+      @apply text-xs; 
+      @apply leading-normal;
+      @apply text-gray-600; 
+      @apply dark:text-gray-800;
+      @apply pb-0;
+      @apply uppercase;
+      @apply p-0;
+      @apply m-0;
+    }
   main ul {
     @apply text-gray-600;
     @apply dark:text-gray-300;

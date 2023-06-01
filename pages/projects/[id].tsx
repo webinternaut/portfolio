@@ -29,7 +29,7 @@ return (
                   </div>
                   <h3 className='text-2xl leading-9 text-gray-600 dark:text-white pb-3'>{project?.header1}</h3>
                   <ReactMarkdown>{project?.section1 ? project.section1 : ''}</ReactMarkdown>
-                  <h3 className='text-2xl leading-9 text-gray-600 dark:text-white pb-3'>{project?.header2}</h3>
+                  <h3 className='text-2xl leading-9 text-gray-600 dark:text-white pb-3'>{project?.header2} </h3>
                   <ReactMarkdown>{project?.section2 ? project.section2 : ''}</ReactMarkdown>
                   <h3 className='text-2xl leading-9 text-gray-600 dark:text-white pb-3'>{project?.header3}</h3>
                   <ReactMarkdown>{project?.section3 ? project.section3 : ''}</ReactMarkdown>
