@@ -40,27 +40,27 @@ const ContactForm = () => {
       {isSent ? (
         <p>Thank you for your message!</p>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="max-w-lg gap-4 ">
+        <form onSubmit={handleSubmit} className="w-full max-w-lg min-w-sm">
+          <div className=" gap-4 ">
               <div className="w-full px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                   Name
                 </label>
-                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="name" placeholder="Jane" value={name} onChange={(e) => setName(e.target.value)} required />
+                <input className="appearance-none block w-full bg-gray-100 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="name" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required />
               </div>
               <div className="w-full  px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                   Email
                 </label>
-                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="name" placeholder="myemail@domain.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input className="appearance-none block w-full bg-gray-100 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" id="name" placeholder="youremail@domain.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div className="w-full  px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                   Message
                 </label>
-                <Textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="name" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
+                <Textarea className="appearance-none block w-full bg-gray-100 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="name" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
               </div>
-              <button type="submit" className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800" disabled={isLoading}>
+              <button type="submit" className="mt-5 inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800" disabled={isLoading}>
               {isLoading ? 'Sending...' : 'Send'}
            </button>
            </div>
