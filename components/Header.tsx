@@ -74,14 +74,15 @@ const Header = () => {
                   </a>
                 </Link>
                 </li>
+                <li>|</li>
+                <li>
+                <div className="float-right"><ThemeChanger /></div>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        
-        <div >
-          <div className="float-right pt-2"><ThemeChanger /></div>
-        </div>
+
       </nav>
     </div>
     

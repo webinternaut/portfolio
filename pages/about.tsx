@@ -1,23 +1,27 @@
 import Layout from '@/components/Layout';
 import ProjectCard from '@/components/ProjectCard';
+import Link from 'next/link';
+import router, { useRouter } from 'next/router';
 
 export default function Projects() {
-
+  const router = useRouter()
 
   return (
     <>
       <div className='border-b-2 border-gray-200 pb-10 mb-10'>
         <h1>Paul Eschli (peschli)</h1>
           <p>
-          <img src="https://mdbootstrap.com//img/Photos/Square/1.jpg" className="h-40 max-w-full rounded-full float-right" alt="" />
-          Passionate about design innovation and user experience, I have over 20 years of experience bringing design to cutting-edge technologies. My unique skill set has set new standards in various industries, and as a team player, I bring creative solutions to impact not just the end product, but also internal processes. My expertise in design research, product innovation, AI/ML design, prototyping, user testing, front-end development and digital marketing, as well as my understanding of technology and its capabilities, ensures successful adoption and usability for users.
+          <img src="./images/me.jpg" className="h-40 max-w-full rounded-full float-right" alt="" />
+          As an accomplished software product designer with extensive experience and a strong skill set, I am deeply committed to design innovation and delivering exceptional user experiences. With a career spanning over 20 years, I have consistently leveraged my expertise to bring cutting-edge design concepts to various industries. Collaborating effectively as a team player, I have successfully introduced creative solutions that not only enhance the final product but also optimize internal processes.
+</p><p>
+My proficiency in design research, product innovation, AI/ML design, prototyping, user testing, front-end development, and digital marketing, combined with a deep understanding of technology and its capabilities, enables me to ensure the seamless adoption and usability of products for end users. Throughout my career, I have consistently set new standards for excellence and achieved remarkable results, making a significant impact in the industry.
           </p>
       </div>
-      <div className='border-b-2 border-gray-200 pb-10'>
-          <h1>Skills</h1>
+      {/* <div className='border-b-2 border-gray-200 pb-10'> */}
+          {/* <h1>Skills</h1>
           <h2>Tech Experience</h2>     
           <ul className='mb-4'>
-            <li>Artifiticial Intelligence (AI): YOLO, CHAT-GTP, Machine Learning</li>
+            <li>Artifiticial Intelligence (AI): YOLO, CHAT-GPT, Machine Learning</li>
             <li>Blockchain: NFT, Crypto transactions, general tech understanding</li>
             <li>Dev-Op Tech: Docker, LXD, LXC, Snap, CLI,</li>
             <li>Dev: HTML5, Javascript, React, Tailwinds, NextJS, Kotlin </li>
@@ -29,7 +33,15 @@ export default function Projects() {
             <li>Prototyping: HTML5, CSS3(Sass), JavaScript, Invision, Marvel App, Studio XID ProtoPie and Adobe Experience Design (XD)</li>
             <li>Co-working Ability: Github, GitLab, Jira, Zeplin, Slack, Trello, MS Teams</li>
           </ul>
-      </div>
+          <br></br> */}
+        <h2>Request Detailed Resume</h2>
+        <p>Due to the sensitive nature of personal information contained in a resume, I maintain its confidentiality by keeping it offline. If you would like to obtain a comprehensive overview of my professional background, kindly reach out to me directly to request my complete resume along with any inquiries you may have.</p>  
+        <Link href="/contact" passHref legacyBehavior>
+                  <a className={router.pathname == "/contact" ? "active" : ""}>
+                    Contact Me
+                  </a>
+                </Link>
+      {/* </div> */}
     </>
 
   );
